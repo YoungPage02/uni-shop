@@ -1,0 +1,43 @@
+.search-box {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+swiper {
+  height: 330rpx;
+}
+swiper .swiper-item {
+  width: 97%;
+  margin: 0 auto;
+}
+swiper .swiper-item image {
+  width: 100%;
+  height: 330rpx;
+}
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 30rpx 0;
+}
+.nav-list .nav-item image {
+  width: 128rpx;
+  height: 128rpx;
+}
+.floor-list .item .floor-title {
+  width: 100%;
+  height: 60rpx;
+}
+.floor-list .item .floor-img-box {
+  display: flex;
+  padding-left: 15rpx;
+}
+.floor-list .item .floor-img-box .right-img-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.floor-list .item .floor-img-box .right-img-box image {
+  width: 232rpx;
+  height: 187.2rpx;
+}

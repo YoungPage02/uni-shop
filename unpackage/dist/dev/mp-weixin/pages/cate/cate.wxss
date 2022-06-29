@@ -1,0 +1,56 @@
+.scroll-container {
+  display: flex;
+}
+.scroll-container .left-scroll {
+  width: 120px;
+  height: 300px;
+}
+.scroll-container .left-scroll .scroll-item {
+  line-height: 60px;
+  background-color: #f7f7f7;
+  text-align: center;
+  font-size: 12px;
+}
+.scroll-container .left-scroll .active {
+  background-color: lightcyan;
+  position: relative;
+  transition: all 1s;
+}
+.scroll-container .left-scroll .active::before {
+  content: '';
+  display: block;
+  width: 3px;
+  height: 30px;
+  background-color: #c00000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.scroll-container .right-scroll {
+  height: 300px;
+}
+.scroll-container .right-scroll .cate-l2 .item-title {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 0;
+}
+.scroll-container .right-scroll .cate-l2 .cate-l3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.scroll-container .right-scroll .cate-l2 .cate-l3 .cate-l3-item {
+  width: 33.33%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scroll-container .right-scroll .cate-l2 .cate-l3 .cate-l3-item image {
+  width: 60px;
+  height: 60px;
+}
+.scroll-container .right-scroll .cate-l2 .cate-l3 .cate-l3-item text {
+  font-size: 12px;
+}
