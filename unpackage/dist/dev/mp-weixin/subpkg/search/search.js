@@ -44,7 +44,9 @@ const _sfc_main = {
       searchData.historyList = [], common_vendor.index.removeStorageSync("kw");
     }
     common_vendor.onMounted(() => {
-      searchData.historyList = JSON.parse(common_vendor.index.getStorageSync("kw"));
+      if (common_vendor.index.getStorageSync("kw")) {
+        searchData.historyList = JSON.parse(common_vendor.index.getStorageSync("kw"));
+      }
     });
     const history = common_vendor.computed$1(() => {
       return [.../* @__PURE__ */ new Set([...searchData.historyList])].reverse();

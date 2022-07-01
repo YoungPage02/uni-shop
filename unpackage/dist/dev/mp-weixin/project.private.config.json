@@ -4,15 +4,15 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/cate/cate",
+          "pathName": "subpkg/search/search",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "subpkg/search/search",
-          "query": "",
+          "pathName": "subpkg/goods_detail/goods_detail",
+          "query": "goods_id=56924",
           "launchMode": "default",
           "scene": null
         }

@@ -91,7 +91,9 @@
       }
       onMounted(() => {
         // 加载本地存储的搜索历史记录
-        searchData.historyList = JSON.parse(uni.getStorageSync('kw'))
+        if(uni.getStorageSync('kw')) {
+          searchData.historyList = JSON.parse(uni.getStorageSync('kw'))
+        }
       })
       const history = computed(() => {
         return [...new Set([...searchData.historyList])].reverse()
