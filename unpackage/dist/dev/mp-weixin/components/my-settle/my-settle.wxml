@@ -1,0 +1,1 @@
+<view><view class="my-settle-container"><label class="radio" bindtap="{{b}}"><radio value="" checked="{{a}}" color="#c00000"/><text>结算</text></label><view class="amount-box"> 结算<text class="amount">￥99999</text></view><view class="btn-settle">结算({{c}})</view></view></view>

@@ -1,6 +1,8 @@
 "use strict";
+var mixin_tabBarBadge = require("../../mixin/tabBar-badge.js");
 var common_vendor = require("../../common/vendor.js");
 const _sfc_main = {
+  mixins: [mixin_tabBarBadge.badgeMix],
   data() {
     return {};
   }

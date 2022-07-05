@@ -1,60 +1,22 @@
 {
-  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "description": "项目配置文件。",
   "packOptions": {
     "ignore": [],
     "include": []
   },
   "setting": {
     "urlCheck": false,
-    "coverView": true,
-    "es6": true,
-    "postcss": true,
-    "lazyloadPlaceholderEnable": false,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "autoAudits": false,
-    "uglifyFileName": false,
-    "uploadWithSourceMap": true,
-    "enhance": true,
-    "useMultiFrameRuntime": true,
-    "showShadowRootInWxmlPanel": true,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useStaticServer": true,
-    "showES6CompileOption": false,
-    "checkInvalidKey": true,
-    "compileHotReLoad": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    },
-    "disableUseStrict": false,
-    "useCompilerPlugins": false
+    }
   },
   "compileType": "miniprogram",
   "libVersion": "2.24.6",
   "appid": "wxb5dd17d68f25c0e3",
   "projectname": "uni_shop2",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "current": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": -1,
-      "list": []
-    }
-  },
+  "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2

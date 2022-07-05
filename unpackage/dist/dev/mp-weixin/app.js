@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports[Symbol.toStringTag] = "Module";
 var common_vendor = require("./common/vendor.js");
+var store_index = require("./store/index.js");
 if (!Math) {
   "./pages/home/home.js";
   "./pages/cate/cate.js";
@@ -44,6 +45,7 @@ common_vendor.index.$showMsg = function(title = "\u8BF7\u6C42\u6570\u636E\u5931\
 };
 function createApp() {
   const app = common_vendor.createSSRApp(App);
+  app.use(store_index.store);
   return {
     app
   };

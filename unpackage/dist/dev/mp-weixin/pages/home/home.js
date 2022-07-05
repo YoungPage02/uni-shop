@@ -1,6 +1,8 @@
 "use strict";
 var common_vendor = require("../../common/vendor.js");
+var mixin_tabBarBadge = require("../../mixin/tabBar-badge.js");
 const _sfc_main = {
+  mixins: [mixin_tabBarBadge.badgeMix],
   setup() {
     const homeDate = common_vendor.reactive({
       swiperList: [],

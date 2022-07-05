@@ -2,6 +2,7 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+
 Vue.config.productionTip = false
 
 App.mpType = 'app'
@@ -39,9 +40,10 @@ uni.$showMsg = function(title = '请求数据失败',duration = 1500) {
     icon:'none'
   })
 }
-
+import store from './store'
 export function createApp() {
   const app = createSSRApp(App)
+  app.use(store)
   return {
     app
   }
