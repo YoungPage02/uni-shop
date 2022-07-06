@@ -16,19 +16,19 @@
 }
 .goods-item .goods-item-right {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
-}
-.goods-item .goods-item-right .goods-info-box {
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  align-items: center;
 }
 .goods-item .goods-item-right .goods-name {
   font-size: 13px;
 }
-.goods-item .goods-item-right .goods-price {
+.goods-item .goods-item-right .goods-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.goods-item .goods-item-right .goods-info-box .goods-price {
   font-size: 16px;
   color: #c00000;
 }

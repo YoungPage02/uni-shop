@@ -1,5 +1,5 @@
 <template>
-  <view class="cart-container">
+  <view class="cart-container" v-if="cart.length !== 0">
     <!-- 地址 -->
     <my-address></my-address>
     <!-- 购物车商品列表的标题区域 -->
@@ -20,6 +20,11 @@
     <!-- 结算区域 -->
     <my-settle></my-settle>
   </view>
+  <!-- 购物车空空如也的图片 -->
+  <view class="empty-box" v-else>
+    <image src="@/static/cart_empty@2x.png" mode=""></image>
+    <text>空空如也</text>
+  </view>
 </template>
 
 <script>
@@ -32,9 +37,9 @@
       return {
         options:[
           {
-            text: '取消',
+            text: '删除',
             style: {
-                backgroundColor: '#007aff'
+                backgroundColor: '#c00000'
             }
           }
         ]
@@ -66,6 +71,24 @@
   border-bottom: 1px solid #efefef;
   .cart-title-text {
     margin-left: 10px;
+  }
+}
+.empty-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  image {
+    width: 180rpx;
+    height: 180rpx;
+  }
+  text {
+    font-size: 24rpx;
+    color: grey;
+    margin-top: 15px;
   }
 }
 </style>

@@ -6,7 +6,12 @@ export default createStore({
     // { goods_id, goods_name, goods_price, goods_count, goods_small_logo, goods_state }
     cart: JSON.parse(uni.getStorageSync('cart') || '[]' ),
     // 收货地址
-    address: JSON.parse(uni.getStorageSync('address') || '{}')
+    address: JSON.parse(uni.getStorageSync('address') || '{}'),
+    token: uni.getStorageSync('token') || '',
+    // 用户的基本信息
+    userinfo: JSON.parse(uni.getStorageSync('userinfo') || '{}'),
+    // 重定向的 object 对象 { openType, from }
+    redirect: null
   },
   getters: {
     // 统计购物车中商品的总数量
@@ -37,6 +42,14 @@ export default createStore({
         return item.goods_state === true
       })
       return result
+    },
+    // 已勾选的商品的总价
+    checkoutAllGoodsAmount(state) {
+      return state.cart.filter((item) => {
+        return item.goods_state === true
+      }).reduce((total,item) => {
+        return total + item.goods_count *item.goods_price
+      },0)
     }
   },
   mutations: {
@@ -99,6 +112,24 @@ export default createStore({
       state.cart.forEach((item) => {
         item.goods_state =newState
       })
+    },
+    // 将 userinfo 持久化存储到本地
+    saveUserInfoToStorage(state) {
+      uni.setStorageSync('userinfo', JSON.stringify(state.userinfo))
+    },
+    // 更新用户的基本信息
+    updataUserInfo(state,userInfo) {
+      state.userinfo = userInfo
+      this.commit('saveUserInfoToStorage')
+    },
+    // 更新token值
+    updataToken(state,val = 'elaina') {
+      state.token = val
+      // 存储在本地
+      uni.setStorageSync('token',state.token)
+    },
+    updataRedirect(state,info) {
+      state.redirect = info
     }
   },
   actions: {

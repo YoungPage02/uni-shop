@@ -4,17 +4,17 @@
     <!-- 商品左侧图片区域 -->
     <view class="goods-item-left">
       <radio :checked="goods.goods_state" color="#C00000" v-if="showRadio" @click="radioClickHandler"></radio>
-      <image :src="goods.goods_small_logo || defaultPic" class="goods-pic"></image>
+      <image :src="goods.goods_small_logo || defaultPic" class="goods-pic" @click="gotoGoods_detail"></image>
     </view>
     <!-- 商品右侧信息区域 -->
     <view class="goods-item-right">
       <!-- 商品标题 -->
-      <view class="goods-name">{{goods.goods_name}}</view>
+      <view class="goods-name" @click="gotoGoods_detail">{{goods.goods_name}}</view>
       <view class="goods-info-box">
         <!-- 商品价格 -->
         <view class="goods-price">￥{{Number(goods.goods_price).toFixed(2)}}</view>
         <!-- 商品数量 -->
-        <uni-number-box :min="1" :value="goods.goods_count" @change="numChangeHandler" v-if="showRadio"></uni-number-box>
+        <uni-number-box class="goods_num" :min="1" :value="goods.goods_count" @change="numChangeHandler" v-if="showRadio"></uni-number-box>
       </view>
     </view>
   </view>
@@ -55,6 +55,12 @@
         // console.log(val);
         this.goods.goods_count = val
         this.$store.commit('changeCount',this.goods)
+      },
+      // 跳转至商品详情页
+      gotoGoods_detail() {
+        uni.navigateTo({
+          url: `/subpkg/goods_detail/goods_detail?goods_id=${this.goods.goods_id}`
+        })
       }
     }
   }
@@ -81,21 +87,20 @@
 
     .goods-item-right {
       display: flex;
+      flex: 1;
       flex-direction: column;
       justify-content: space-between;
-      .goods-info-box {
-        display: flex;
-        flex: 1;
-        justify-content: space-between;
-        align-items: center;
-      }
       .goods-name {
         font-size: 13px;
       }
-
-      .goods-price {
-        font-size: 16px;
-        color: #c00000;
+      .goods-info-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .goods-price {
+          font-size: 16px;
+          color: #c00000;
+        }
       }
     }
   }

@@ -24,18 +24,30 @@ var badgeMix = {
         index: 2,
         text: this.total + ""
       });
+    },
+    removeBadge() {
+      common_vendor.index.removeTabBarBadge({
+        index: 2
+      });
     }
   },
   onShow() {
-    this.setBadge();
+    if (this.total == 0) {
+      this.removeBadge();
+    } else {
+      this.setBadge();
+    }
   },
   watch: {
     total: {
       handler() {
-        this.setBadge();
+        if (this.total == 0) {
+          this.removeBadge();
+        } else {
+          this.setBadge();
+        }
       }
-    },
-    immediate: true
+    }
   }
 };
 exports.badgeMix = badgeMix;

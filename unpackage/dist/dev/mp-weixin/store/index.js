@@ -3,7 +3,10 @@ var common_vendor = require("../common/vendor.js");
 var store = common_vendor.createStore({
   state: {
     cart: JSON.parse(common_vendor.index.getStorageSync("cart") || "[]"),
-    address: JSON.parse(common_vendor.index.getStorageSync("address") || "{}")
+    address: JSON.parse(common_vendor.index.getStorageSync("address") || "{}"),
+    token: common_vendor.index.getStorageSync("token") || "",
+    userinfo: JSON.parse(common_vendor.index.getStorageSync("userinfo") || "{}"),
+    redirect: null
   },
   getters: {
     total(state) {
@@ -30,6 +33,13 @@ var store = common_vendor.createStore({
         return item.goods_state === true;
       });
       return result;
+    },
+    checkoutAllGoodsAmount(state) {
+      return state.cart.filter((item) => {
+        return item.goods_state === true;
+      }).reduce((total, item) => {
+        return total + item.goods_count * item.goods_price;
+      }, 0);
     }
   },
   mutations: {
@@ -82,6 +92,20 @@ var store = common_vendor.createStore({
       state.cart.forEach((item) => {
         item.goods_state = newState;
       });
+    },
+    saveUserInfoToStorage(state) {
+      common_vendor.index.setStorageSync("userinfo", JSON.stringify(state.userinfo));
+    },
+    updataUserInfo(state, userInfo) {
+      state.userinfo = userInfo;
+      this.commit("saveUserInfoToStorage");
+    },
+    updataToken(state, val = "elaina") {
+      state.token = val;
+      common_vendor.index.setStorageSync("token", state.token);
+    },
+    updataRedirect(state, info) {
+      state.redirect = info;
     }
   },
   actions: {},

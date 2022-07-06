@@ -11,18 +11,32 @@ export default {
           index:2,
           text:this.total + ''  // 注意：text 的值必须是字符串，不能是数字
         })
+      },
+      // 购物车为空时清除图标
+      removeBadge() {
+        uni.removeTabBarBadge({
+          index:2,
+        })
       }
     },
     onShow() {
       // 在页面刚展示的时候，设置数字徽标
-      this.setBadge()
+      if(this.total == 0) {
+        this.removeBadge()
+      }else {
+        this.setBadge()
+      }
     },
     watch: {
       total: {
         handler() {
-          this.setBadge()
+          if(this.total == 0) {
+            this.removeBadge()
+          }else {
+            this.setBadge()
+          }
         }
-      },
-      immediate: true
+      }/* ,
+      immediate: true */
     }
   }

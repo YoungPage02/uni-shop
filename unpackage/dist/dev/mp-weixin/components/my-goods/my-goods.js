@@ -26,6 +26,11 @@ const _sfc_main = {
     numChangeHandler(val) {
       this.goods.goods_count = val;
       this.$store.commit("changeCount", this.goods);
+    },
+    gotoGoods_detail() {
+      common_vendor.index.navigateTo({
+        url: `/subpkg/goods_detail/goods_detail?goods_id=${this.goods.goods_id}`
+      });
     }
   }
 };
@@ -45,12 +50,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     c: common_vendor.o((...args) => $options.radioClickHandler && $options.radioClickHandler(...args))
   } : {}, {
     d: $props.goods.goods_small_logo || $data.defaultPic,
-    e: common_vendor.t($props.goods.goods_name),
-    f: common_vendor.t(Number($props.goods.goods_price).toFixed(2)),
-    g: $props.showRadio
+    e: common_vendor.o((...args) => $options.gotoGoods_detail && $options.gotoGoods_detail(...args)),
+    f: common_vendor.t($props.goods.goods_name),
+    g: common_vendor.o((...args) => $options.gotoGoods_detail && $options.gotoGoods_detail(...args)),
+    h: common_vendor.t(Number($props.goods.goods_price).toFixed(2)),
+    i: $props.showRadio
   }, $props.showRadio ? {
-    h: common_vendor.o($options.numChangeHandler),
-    i: common_vendor.p({
+    j: common_vendor.o($options.numChangeHandler),
+    k: common_vendor.p({
       min: 1,
       value: $props.goods.goods_count
     })

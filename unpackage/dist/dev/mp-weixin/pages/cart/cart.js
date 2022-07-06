@@ -17,15 +17,16 @@ var __spreadValues = (a, b) => {
 };
 var mixin_tabBarBadge = require("../../mixin/tabBar-badge.js");
 var common_vendor = require("../../common/vendor.js");
+var _imports_0 = "/static/cart_empty@2x.png";
 const _sfc_main = {
   mixins: [mixin_tabBarBadge.badgeMix],
   data() {
     return {
       options: [
         {
-          text: "\u53D6\u6D88",
+          text: "\u5220\u9664",
           style: {
-            backgroundColor: "#007aff"
+            backgroundColor: "#c00000"
           }
         }
       ]
@@ -57,12 +58,14 @@ if (!Math) {
   (_easycom_my_address + _easycom_uni_icons + _easycom_my_goods + _easycom_uni_swipe_action_item + _easycom_uni_swipe_action + _easycom_my_settle)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return {
-    a: common_vendor.p({
+  return common_vendor.e({
+    a: _ctx.cart.length !== 0
+  }, _ctx.cart.length !== 0 ? {
+    b: common_vendor.p({
       type: "shop",
       size: "18"
     }),
-    b: common_vendor.f(_ctx.cart, (goods, i, i0) => {
+    c: common_vendor.f(_ctx.cart, (goods, i, i0) => {
       return {
         a: "d756f132-4-" + i0 + "," + ("d756f132-3-" + i0),
         b: common_vendor.p({
@@ -74,10 +77,12 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         e: i
       };
     }),
-    c: common_vendor.p({
+    d: common_vendor.p({
       ["right-options"]: $data.options
     })
-  };
+  } : {
+    e: _imports_0
+  });
 }
 var MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/HBuilderX/study/uni_shop2/pages/cart/cart.vue"]]);
 wx.createPage(MiniProgramPage);
