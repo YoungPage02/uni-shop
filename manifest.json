@@ -1,5 +1,5 @@
 {
-    "name" : "uni_shop2",
+    "name" : "Y-shopStudy",
     "appid" : "__UNI__00F6201",
     "description" : "",
     "versionName" : "1.0.0",
@@ -43,7 +43,6 @@
     "quickapp" : {},
     /* 快应用特有相关 */
     "mp-weixin" : {
-        /* 小程序特有相关 */
         "appid" : "wxb5dd17d68f25c0e3",
         "setting" : {
             "urlCheck" : false

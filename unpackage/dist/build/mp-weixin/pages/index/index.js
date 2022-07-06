@@ -1,0 +1,1 @@
+"use strict";var e=require("../../mixin/tabBar-badge.js"),r=require("../../common/vendor.js");const i={mixins:[e.badgeMix],data:()=>({href:"https://uniapp.dcloud.io/component/README?id=uniui"}),methods:{}};if(!Array){r.resolveComponent("uni-link")()}Math;var n=r._export_sfc(i,[["render",function(e,i,n,t,a,o){return{a:r.p({href:a.href,text:a.href})}}]]);wx.createPage(n);

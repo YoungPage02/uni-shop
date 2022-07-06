@@ -10,30 +10,14 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "minified": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.24.6",
+  "libVersion": "2.25.0",
   "appid": "wxb5dd17d68f25c0e3",
   "projectname": "Y-shopStudy",
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "current": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": -1,
-      "list": []
-    }
-  },
+  "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
